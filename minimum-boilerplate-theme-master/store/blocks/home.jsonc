@@ -1,15 +1,148 @@
 {
   "store.home": { 
     "blocks": [
-      "rich-text"
+      "flex-layout.row#main-desktop",
+      "flex-layout.row#main-mobile",
+      "list-context.product-list" 
     ]
   },
-  "rich-text": { 
-    "props": { 
-      "text": "VTEX Store Framework",
-      "textAlignment": "CENTER",
-      "textPosition": "CENTER",
-      "font": "t-heading-1"
+  "flex-layout.row#main-desktop": {
+    "props": {
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      "tab-layout"
+    ]
+  },
+  "list-context.product-list": {
+    "blocks": ["product-summary.shelf#home"],
+    "children": ["shelf.relatedProducts"]
+  },
+  "product-summary.shelf#home": {
+    "children": [
+      "product-summary-name",
+      "product-selling-price"
+    ]
+  },
+  "tab-layout": {
+    "children": [
+      "tab-list",
+      "tab-content"
+    ]
+  },
+  "tab-list": {
+    "children": [
+      "tab-list.item#PROMOCAO",
+      "tab-list.item#CORINTHIANS",
+      "tab-list.item#PALMEIRAS",
+      "tab-list.item#SIGNOS"
+      ]
+  },
+  "tab-content": {
+    "children": [
+      "tab-content.item#PROMOCAO",
+      "tab-content.item#CORINTHIANS",
+      "tab-content.item#PALMEIRAS",
+      "tab-content.item#SIGNOS"
+      ]
+  },
+  "tab-list.item#PROMOCAO": {
+    "props": {
+      "tabId": "promocao",
+      "label": "PROMOÇÃO",
+      "defaultActiveTab": true
     }
+  },
+  "tab-list.item#CORINTHIANS": {
+    "props": {
+      "tabId": "corinthians",
+      "label": "CORINTHIANS",
+      "defaultActiveTab": false
+    }
+  },
+  "tab-list.item#PALMEIRAS": {
+    "props": {
+      "tabId": "palmeiras",
+      "label": "PALMEIRAS",
+      "defaultActiveTab": false
+    }
+  },
+  "tab-list.item#SIGNOS": {
+    "props": {
+      "tabId": "signos",
+      "label": "SIGNOS",
+      "defaultActiveTab": false
+    }
+  },
+  "tab-content.item#PROMOCAO": {
+    "children": [
+      //"rich-text#PROMOCAO",
+      "slider-layout#home"
+    ],
+    "props": {
+      "tabId": "promocao"
+    }
+  },
+  "tab-content.item#CORINTHIANS": {
+    "children": [
+      //"rich-text#CORINTHIANS",
+      "slider-layout#home"
+    ],
+    "props": {
+      "tabId": "corinthians"
+    }
+  },
+  "tab-content.item#PALMEIRAS": {
+    "children": [
+      //"rich-text#PALMEIRAS",
+      "slider-layout#home"
+    ],
+    "props": {
+      "tabId": "palmeiras"
+    }
+  },
+  "tab-content.item#SIGNOS": {
+    "children": [
+      //"rich-text#SIGNOS",
+      "slider-layout#home"
+    ],
+    "props": {
+      "tabId": "signos"
+    }
+  },
+  "rich-text#PROMOCAO": {
+    "props": {
+      "text": "Texto para PROMOÇÃO",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "rich-text#CORINTHIANS": {
+    "props": {
+      "text": "Texto para CORINTHIANS",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "rich-text#PALMEIRAS": {
+    "props": {
+      "text": "Texto para PALMEIRAS",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "rich-text#SIGNOS": {
+    "props": {
+      "text": "Texto para SIGNOS",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "flex-layout.row#main-mobile": {
+
   }
 }
