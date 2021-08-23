@@ -2,8 +2,8 @@
   "store.home": { 
     "blocks": [
       "flex-layout.row#main-desktop",
-      "flex-layout.row#main-mobile",
-      "list-context.product-list" 
+      "flex-layout.row#main-mobile" 
+      
     ]
   },
   "flex-layout.row#main-desktop": {
@@ -15,17 +15,77 @@
       "fullWidth": true
     },
     "children": [
+      "flex-layout.col#main-desktop-container"
+    ]
+  },
+  "flex-layout.col#main-desktop-container": {
+    "props": {
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "fullWidth": true,
+      "rowGap": 5
+    },
+    "children": [
+      "flex-layout.row#main-desktop-banner",
+      "flex-layout.row#main-desktop-product-list"
+    ]
+  },
+  "flex-layout.row#main-desktop-banner": {
+    "props": {
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "fullWidth": true,
+      "marginBottom": 8,
+      "marginTop": 8
+    },
+    "children": [
       "tab-layout"
+    ]
+  },
+  "flex-layout.row#main-desktop-product-list": {
+    "props": {
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": false,
+      "fullWidth": true,
+      "marginBottom": 8,
+      "marginTop": 8,
+      "paddingBottom": 8
+
+    },
+    "children": [
+      "list-context.product-list" 
     ]
   },
   "list-context.product-list": {
     "blocks": ["product-summary.shelf#home"],
-    "children": ["shelf.relatedProducts"]
+    "children": ["slider-layout#products"]
+  },
+  "slider-layout#products": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 4,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "centerMode": "center",
+      "fullWidth": true
+    }
   },
   "product-summary.shelf#home": {
     "children": [
+      "product-summary-image",
       "product-summary-name",
-      "product-selling-price"
+      "product-rating-inline",
+      "product-summary-space",
+      "product-summary-price",
+      "product-summary-buy-button"
     ]
   },
   "tab-layout": {
